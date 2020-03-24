@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'selectDropdown';
+  colors = ['red', 'green'];
+ // colors = [{title: 'orange',path:'abc'},{title:'blue',path:'xyz'}];  
 }

@@ -1,0 +1,16 @@
+
+<mat-form-field>
+  <mat-label>Color</mat-label>
+  <mat-select #matSelect  [formControl]="selectedColors" [multiple]="multiple">
+     <input placeholder="Search" class="search" (keyup)="filter($event.target.value)" *ngIf="search">
+    <mat-checkbox class="dropdown-checkbox"  [(ngModel)]="selectall" (ngModelChange)="selectallcolor()" *ngIf="multiple"></mat-checkbox>
+     <mat-option class="border" *ngFor="let color of filteredColors" [value]="color">
+       {{color.title ? color.title : color}} 
+      </mat-option>
+      <div class="height dropDown-button" *ngIf="multiple">
+        <button mat-button (click)="clear()">Clear</button>
+        <button mat-button (click)="submit()" class="spacing">submit</button>
+      </div>
+
+  </mat-select>
+</mat-form-field>
